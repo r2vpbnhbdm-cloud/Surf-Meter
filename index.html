@@ -101,25 +101,28 @@
         <div class="gauge-wrapper">
             <svg viewBox="0 0 200 100">
                 <defs>
-                    <!-- Linear gradient moving from Red to Green -->
+                    <!-- Linear gradient with 5 transition steps -->
                     <linearGradient id="intensityGradient" x1="0%" y1="0%" x2="100%" y2="0%">
                         <stop offset="0%" stop-color="#ef4444" />    <!-- Red -->
-                        <stop offset="33%" stop-color="#f97316" />   <!-- Orange -->
-                        <stop offset="66%" stop-color="#eab308" />   <!-- Yellow -->
-                        <stop offset="100%" stop-color="#22c55e" />  <!-- Green -->
+                        <stop offset="25%" stop-color="#f97316" />   <!-- Orange -->
+                        <stop offset="50%" stop-color="#eab308" />   <!-- Yellow -->
+                        <stop offset="75%" stop-color="#84cc16" />   <!-- Light Green -->
+                        <stop offset="100%" stop-color="#22c55e" />  <!-- Dark Green -->
                     </linearGradient>
                 </defs>
 
                 <!-- Full arc track filled with the custom gradient -->
                 <path d="M 20 90 A 80 80 0 0 1 180 90 L 165 90 A 65 65 0 0 0 35 90 Z" fill="url(#intensityGradient)"/>
                 
-                <!-- Threshold Divider Lines (Drawn from inner to outer radius at exactly 45°, 90°, and 135°) -->
-                <!-- Red to Orange Threshold Line -->
-                <line x1="54.04" y1="44.04" x2="43.43" y2="33.43" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round" />
-                <!-- Orange to Yellow Threshold Line -->
-                <line x1="100" y1="25" x2="100" y2="10" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round" />
-                <!-- Yellow to Green Threshold Line -->
-                <line x1="145.96" y1="44.04" x2="156.57" y2="33.43" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round" />
+                <!-- 4 Threshold Divider Lines separating the 5 zones evenly -->
+                <!-- Line 1: Red / Orange Border -->
+                <line x1="47.41" y1="51.79" x2="35.28" y2="42.98" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round" />
+                <!-- Line 2: Orange / Yellow Border -->
+                <line x1="79.91" y1="28.18" x2="75.28" y2="13.92" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round" />
+                <!-- Line 3: Yellow / Light Green Border -->
+                <line x1="120.09" y1="28.18" x2="124.72" y2="13.92" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round" />
+                <!-- Line 4: Light Green / Dark Green Border -->
+                <line x1="152.59" y1="51.79" x2="164.72" y2="42.98" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round" />
                 
                 <!-- Center Pin -->
                 <circle cx="100" cy="90" r="6" fill="#f8fafc"/>
